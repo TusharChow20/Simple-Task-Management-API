@@ -22,7 +22,7 @@ app.use(
 app.get("/", (_req: Request, res: Response) => {
   res.json({
     success: true,
-    message: "Task Management API is running 🚀",
+    message: "Task Management API is running Thanks@@",
     version: "1.0.0",
   });
 });
