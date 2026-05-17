@@ -49,6 +49,7 @@ const getSingleTask = catchAsync(async (req: Request, res: Response) => {
 });
 
 const updateTask = catchAsync(async (req: Request, res: Response) => {
+  console.log("BODY RECEIVED:", req.body);
   if (!req.user) throw new AppError("Unauthorized", 401);
 
   const task = await TaskServices.updateTask(

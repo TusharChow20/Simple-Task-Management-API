@@ -25,5 +25,4 @@ router
     TaskController.updateTask,
   )
   .delete(TaskController.deleteTask);
-
 export const TaskRoutes = router;

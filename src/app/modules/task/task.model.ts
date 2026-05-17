@@ -1,7 +1,15 @@
 import mongoose, { Schema, Document } from "mongoose";
-import { TTask } from "./task.interface";
+import { TTaskStatus, TTaskPriority } from "./task.interface";
+import { Types } from "mongoose";
 
-export interface ITaskDocument extends TTask, Document {}
+export interface ITaskDocument extends Document {
+  title: string;
+  description?: string;
+  status: TTaskStatus;
+  priority: TTaskPriority;
+  dueDate?: Date;
+  user: Types.ObjectId;
+}
 
 const taskSchema = new Schema<ITaskDocument>(
   {

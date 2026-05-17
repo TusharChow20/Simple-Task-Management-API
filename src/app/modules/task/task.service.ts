@@ -79,7 +79,7 @@ const updateTask = async (
       _id: new Types.ObjectId(taskId),
       user: new Types.ObjectId(userId),
     },
-    payload,
+    { $set: payload },
     { new: true, runValidators: true },
   );
 
@@ -89,7 +89,6 @@ const updateTask = async (
 
   return task;
 };
-
 const deleteTask = async (userId: string, taskId: string) => {
   const task = await TaskModel.findOneAndDelete({
     _id: new Types.ObjectId(taskId),
